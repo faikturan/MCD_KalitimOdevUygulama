@@ -16,6 +16,7 @@ namespace MCD_KalitimOdevUygulama
             if (data != null && !string.IsNullOrEmpty(data.barkod))
             {
                 db.Add(data);
+                Console.WriteLine(data);
             }
         }
 
@@ -36,6 +37,14 @@ namespace MCD_KalitimOdevUygulama
             }
 
             return kontrolIslemi;
+        }
+
+        public static void yazdir()
+        {
+            foreach (bilgisayar item in sanalDatabase.db)
+            {
+                Console.WriteLine("Marka: " + item.marka + " model: " + item.model + " işlemci: " + item.islemci + " alış fiyatı: " + item.alisFiyat + " satış fiyatı: " + item.satisFiyat + " kampanya fiyatı: " + item.kampanyaFiyat + " barkod: " + item.barkod);
+            }
         }
     }
 }

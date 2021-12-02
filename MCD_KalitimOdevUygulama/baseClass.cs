@@ -34,7 +34,25 @@ namespace MCD_KalitimOdevUygulama
         }
 
         private string _barkod;
-        public string barkod { get; set; }//TODO: Buraya geri dön
+        public string barkod
+        {
+            get
+            {
+                return _barkod;
+            }
+            set
+            {
+                bool kontrolIslemi = sanalDatabase.dbBarkodKontrol(value);
+                if (!kontrolIslemi)//degeri sanal database içerisinde bulamadık
+                {
+                    _barkod = value;
+                }
+                else
+                {
+                    Console.WriteLine("Sanal database içerisinde bu barkod değeri daha önce girilmiştir.");
+                }
+            }
+        }
 
         public DateTime olusturmaTarih { get; set; }
         public int olusturanKullanici { get; set; }
