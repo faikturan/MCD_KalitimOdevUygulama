@@ -44,8 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="baseClass.cs" />
+    <Compile Include="bilgisayar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sanalDatabase.cs" />
+    <Compile Include="televizyon.cs" />
     <Compile Include="urun.cs" />
   </ItemGroup>
   <ItemGroup>
